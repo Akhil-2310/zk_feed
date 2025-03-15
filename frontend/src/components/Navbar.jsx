@@ -1,4 +1,32 @@
 import { Link } from "react-router-dom";
+import { createAppKit } from '@reown/appkit/react'
+import { EthersAdapter } from '@reown/appkit-adapter-ethers'
+import { celoAlfajores } from '@reown/appkit/networks'
+
+// 1. Get projectId
+const projectId = 'YOUR_PROJECT_ID'
+
+// 2. Set the networks
+const networks = [celoAlfajores]
+
+// 3. Create a metadata object - optional
+const metadata = {
+  name: 'My Website',
+  description: 'My Website description',
+  url: 'https://mywebsite.com', // origin must match your domain & subdomain
+  icons: ['https://avatars.mywebsite.com/']
+}
+
+// 4. Create a AppKit instance
+createAppKit({
+  adapters: [new EthersAdapter()],
+  networks,
+  metadata,
+  projectId,
+  features: {
+    analytics: true // Optional - defaults to your Cloud configuration
+  }
+})
 
 function Navbar() {
   return (
@@ -11,9 +39,7 @@ function Navbar() {
             </Link>
           </div>
           <div className="flex items-center">
-            <button className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 rounded mr-4">
-              Connect Wallet
-            </button>
+          <appkit-button />
             <Link
               to="/generate-identity"
               className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded"

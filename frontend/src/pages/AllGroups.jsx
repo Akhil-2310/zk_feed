@@ -35,12 +35,12 @@ const navigate = useNavigate();
             </h2>
             <p className="text-gray-600 mb-4">{group.description}</p>
             <p className="text-gray-600 mb-4">{group.nationality}</p>
-            <Link
+            {/* <Link
               to={`/view-group/${group.groupId}`}
               className="inline-flex m-4 items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             >
               View Group
-            </Link>
+            </Link> */}
             <button
               type="submit"
               onClick={handleClick}
