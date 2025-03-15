@@ -7,6 +7,7 @@ import GenerateIdentity from "./pages/GenerateIdentity";
 import CreateGroup from "./pages/CreateGroup";
 import AllGroups from "./pages/AllGroups";
 import ViewGroup from "./pages/ViewGroup";
+import QrCode from "./pages/QrCode";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/create-group" element={<CreateGroup />} />
           <Route path="/all-groups" element={<AllGroups />} />
           <Route path="/view-group/:id" element={<ViewGroup />} />
+          <Route path="/verify" element={<QrCode />} />
         </Routes>
         <ToastContainer />
       </div>
